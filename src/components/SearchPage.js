@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom'
 import Book from "./Book";
+import PropTypes from 'prop-types';
+import {DebounceInput} from 'react-debounce-input';
+
+
 class SearchPage extends Component {
     state = {
         query: ''
     };
+
     updateQuery = (query) => {
         this.setState({ query: query });
         this.props.updateSearch(query)
@@ -17,9 +22,11 @@ class SearchPage extends Component {
                         <Link to="/" className="close-search" >Close</Link>
                         <div className="search-books-input-wrapper" onSubmit={(event) => event.preventDefault()} >
 
-                            <input type="text" placeholder="Search by title or author"
+                            <DebounceInput type="text" placeholder="Search by title or author"
                                 value={this.state.query}
-                                onChange={(event) => this.updateQuery(event.target.value)} />
+                                onChange={(event) => this.updateQuery(event.target.value)} 
+                                debounceTimeout={300}
+                                />
 
                         </div>
                     </div>
@@ -34,6 +41,11 @@ class SearchPage extends Component {
             </div>
         )
     }
+}
+SearchPage.propTypes = {
+    searchResults: PropTypes.array.isRequired,
+    shelfChanger: PropTypes.func.isRequired,
+    updateSearch: PropTypes.func.isRequired,
 }
 
 export default SearchPage;

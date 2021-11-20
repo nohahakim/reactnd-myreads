@@ -11,15 +11,9 @@ class BooksApp extends React.Component {
     searchResults: []
   }
 
-  fetchAllBooks = () => {
-    BooksAPI.getAll()
-      .then(resp => {
-        this.setState({ books: resp });
-      });
-  }
-
-  componentDidMount() {
-    this.fetchAllBooks();
+  async componentDidMount() {
+    const books = await BooksAPI.getAll();
+    this.setState({ books });
   }
 
   updateSearch = (query) => {
@@ -41,10 +35,11 @@ class BooksApp extends React.Component {
       })
 
     } else {
-      this.setState({ searchedResults: [] })
+      this.setState({ searchResults: [] })
     }
 
   }
+
   shelfChanger = (book, shelf) => {
     BooksAPI.update(book, shelf)
       .then(resp => {
@@ -65,8 +60,6 @@ class BooksApp extends React.Component {
             updateSearch={this.updateSearch}
             shelfChanger={this.shelfChanger} />} />
         </Routes>
-
-
       </div>
     )
   }
