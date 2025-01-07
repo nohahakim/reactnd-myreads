@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/reactnd-myreads/static/css/main.f0f28c23.chunk.css",
-    "main.js": "/reactnd-myreads/static/js/main.d99ef2a7.chunk.js",
-    "main.js.map": "/reactnd-myreads/static/js/main.d99ef2a7.chunk.js.map",
+    "main.js": "/reactnd-myreads/static/js/main.7d346ec3.chunk.js",
+    "main.js.map": "/reactnd-myreads/static/js/main.7d346ec3.chunk.js.map",
     "runtime-main.js": "/reactnd-myreads/static/js/runtime-main.bffe2692.js",
     "runtime-main.js.map": "/reactnd-myreads/static/js/runtime-main.bffe2692.js.map",
     "static/js/2.596f04b8.chunk.js": "/reactnd-myreads/static/js/2.596f04b8.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.bffe2692.js",
     "static/js/2.596f04b8.chunk.js",
     "static/css/main.f0f28c23.chunk.css",
-    "static/js/main.d99ef2a7.chunk.js"
+    "static/js/main.7d346ec3.chunk.js"
   ]
 }
